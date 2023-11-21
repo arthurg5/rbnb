@@ -1,0 +1,9 @@
+<%= simple_form_for(car) do |f| %>
+  <%= f.input :model %>
+  <%= f.input :description %>
+  <%= f.input :year %>
+  <%= f.input :color %>
+  <%= f.input :fuel, collection: Car::FUEL %>
+  <%= f.input :price %>
+  <%= f.submit class: "btn btn-primary mt-4" %>
+<% end %>

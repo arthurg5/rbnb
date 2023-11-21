@@ -1,0 +1,17 @@
+<!-- page vrapper -->
+<div class="container">
+  <div class="container-cards-flex">
+      <div class="cards">
+          <div>
+              <% @cars.each do |car| %>
+                <div class="card" style="background-image: url()">
+                </div>
+                <p> <%= car.model %> </p>
+                <% car.id %>
+                <p> Price: <%= car.price %> </p>
+              <% end %>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<h1>Dashboard pages</h1>
+
+<div class="container">
+  <div class="row">
+
+    <div class="bookings">
+      <h3>Bookings</h3>
+        <%= @bookings %>
+    </div>
+
+    <div class="cars">
+      <h3>Cars</h3>
+      <% @cars.each do |car| %>
+        <%= car.model %>
+      <% end %>
+    </div>
+
+   </div>
+</div>
