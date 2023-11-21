@@ -1,8 +1,7 @@
-//
 .card {
   background-size: cover;
   background-position: center;
-  height: 300px;
+  height: 320px;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;
@@ -11,33 +10,21 @@
   font-size: 22px;
   color: white;
   font-weight: bolder;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
-  width: 780px;
-  text-align: left;
-}
-
-.card-mini{
-  background-size: cover;
-  background-position: center;
-  height: 200px;
-  border-radius: 1px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  font-size: 22px;
-  color: white;
-  font-weight: bolder;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
-  width: 280px;
-  text-align: left;
 }
 
 .cards{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 25px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
   flex-grow: 1;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   padding: 15px;
+}
+
+.card-big{
+  height: 400px;
+}
+
+.box{
+  width: 50%;
 }
