@@ -5,8 +5,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    # @user = User.find(params[:user_id])
-    # @booking.user = @user
-    # @car.user = @user
+    @bookings = current_user.bookings
+    @cars = current_user.cars
   end
 end
