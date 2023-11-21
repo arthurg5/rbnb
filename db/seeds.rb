@@ -12,16 +12,26 @@
 # db/seeds.rb
 require 'faker'
 
-puts 'Creating 30 fake cars'
-30.times do
-  car = Car.new(
-    model:    # Faker::Company.name,
-    year: # Faker::Address.street_address,
-    fuel: # Faker::Address.city,
-    color: # Faker::,
-    price: # Faker::,
-    description: # Faker::
+puts 'Creating 10 fake users'
+10.times do
+  user = User.create!(
+    email: Faker::Internet.email,
+    password: Faker::Internet.password,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name
   )
-  car.save!
+
+  puts "Creating cars for user #{user.id}"
+  3.times do
+    car = user.cars.create!(
+      model: Faker::Vehicle.model,
+      year: Faker::Vehicle.year,
+      fuel: "Gasoline",
+      color: Faker::Vehicle.color,
+      price: Faker::Commerce.price(range: 80..300),
+      description: Faker::Lorem.sentence
+    )
+    puts "Car #{car.id} created for user #{user.id}"
+  end
 end
 puts 'Seed creation is over!'
