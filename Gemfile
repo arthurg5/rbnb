@@ -13,6 +13,8 @@ gem "date_validator"
 
 gem "dotenv-rails"
 
+gem "cloudinary"
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
