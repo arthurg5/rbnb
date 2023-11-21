@@ -7,3 +7,21 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# gem install faker
+# db/seeds.rb
+require 'faker'
+
+puts 'Creating 30 fake cars'
+30.times do
+  car = Car.new(
+    model:    # Faker::Company.name,
+    year: # Faker::Address.street_address,
+    fuel: # Faker::Address.city,
+    color: # Faker::,
+    price: # Faker::,
+    description: # Faker::
+  )
+  car.save!
+end
+puts 'Seed creation is over!'
