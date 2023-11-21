@@ -1,0 +1,5 @@
+<h1>Edit Booking Status</h1>
+<%= simple_form_for @booking do |f| %>
+  <%= f.input :status, collection: Booking::STATUS %>
+  <%= f.button :submit, 'Edit Booking Status', class: 'btn btn-primary' %>
+<% end %>
