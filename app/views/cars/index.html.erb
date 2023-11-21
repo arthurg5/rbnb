@@ -1,14 +1,15 @@
 <div class="container">
+<!-- CAROUSSEL HOME PAGE -->
   <div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://www.guide-auto.com/wp-content/uploads/2022/10/ds-4-2021-3-4-anteriore-1024x576.jpg" class="d-block w-100" alt="...">
+        <img src="https://www.guide-auto.com/wp-content/uploads/2022/10/ds-4-2021-3-4-anteriore-1024x576.jpg"  height="350"class="d-block w-100" alt="Voiture">
       </div>
       <div class="carousel-item">
-        <img src="https://www.carouleraoul.com/wp-content/uploads/2022/11/raw-1080x600.jpg" class="d-block w-100" alt="...">
+        <img src="https://www.carouleraoul.com/wp-content/uploads/2022/11/raw-1080x600.jpg" class="d-block w-100"  height="350" alt="Voiture">
       </div>
       <div class="carousel-item">
-        <img src="https://www.topgear.com/sites/default/files/2022/07/6_0.jpg" class="d-block w-100" alt="...">
+        <img src="https://www.topgear.com/sites/default/files/2022/07/6_0.jpg" class="d-block w-100" height="350" alt="Voiture">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -21,15 +22,17 @@
     </button>
   </div>
 
-
-  <div class="container-cards-flex">
-    <% @cars.each do |car| %>
-      <div class="card">
-        <img src="https://www.topgear.com/sites/default/files/2022/07/6_0.jpg" alt="car picture" class="img-sizing">
-        <p> <%= car.model %> </p>
-        <% car.id %>
-        <p> Price: <%= car.price %> </p>
+ <div class="container-cards-flex">
+      <div class="cards">
+        <% @cars.each do |car| %>
+          <div class="card">
+            <img src="https://www.topgear.com/sites/default/files/2022/07/6_0.jpg" alt="car picture" class="img-sizing">
+            <p> <%= car.model %> </p>
+            <% car.id %>
+            <p> Price: <%= car.price %> </p>
+          </div>
         <% end %>
       </div>
-    </div>
+</div>
+
 </div>
