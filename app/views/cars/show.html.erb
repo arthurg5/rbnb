@@ -5,7 +5,15 @@
       <h3 class="card-title"> <%= @car.model %></h3>
         <div class="d-flex mt-4">
           <div class="box">
-            <img src="https://m.media-amazon.com/images/I/71E32iPE92L.__AC_SY300_SX300_QL70_ML2_.jpg" class="img-sizing">
+
+            <% if @car.photos.present? %>
+              <% @car.photos.each do |photo| %>
+                <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
+              <% end %>
+            <% else %>
+              <img src="https://m.media-amazon.com/images/I/71E32iPE92L.__AC_SY300_SX300_QL70_ML2_.jpg" class="img-sizing">
+            <% end %>
+
           </div>
           <div class="box mt-3">
             <p> <%= @car.description %> </p>
