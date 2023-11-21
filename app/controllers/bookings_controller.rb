@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
     @booking.car = @car
     @booking.user = current_user
     if @booking.save
+      calculate_total_price(@booking)
       redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
@@ -27,8 +28,9 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params2)
-    redirect_to bookings_path
+    redirect_to dashboard_path
   end
+
 
   private
 
@@ -38,5 +40,11 @@ class BookingsController < ApplicationController
 
   def booking_params2
     params.require(:booking).permit(:status)
+  end
+
+  def calculate_total_price(booking)
+    days_booked = (booking.end_date - booking.start_date).to_i
+    booking.total_price = days_booked * booking.car.price
+    booking.save
   end
 end
