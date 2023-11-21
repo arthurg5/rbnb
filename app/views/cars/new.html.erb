@@ -1,16 +1,5 @@
 <h1>New car</h1>
 
 <div class="container">
-      <div class="cards">
-          <div>
-                <div class="card" style="background-image: url()">
-                  <p> <%= car.model %> </p>
-                  <p> Car description: <%= car.description %> </p>
-                  <p> Manufactured in: <%= car.year %> </p>
-                  <p> Powerwed with: <%= car.fuel %> </p>
-                  <p> Color: <%= car.color %> </p>
-                  <p> Price: <%= car.price %> </p>
-                </div>
-          </div>
-      </div>
+    <%= render 'form', car: @car %>
 </div>
