@@ -2,18 +2,44 @@
 
 <div class="container">
   <div class="row">
-
-    <div class="bookings">
-      <h3>Bookings</h3>
-        <%= @bookings %>
-    </div>
-
-    <div class="cars">
-      <h3>Cars</h3>
-      <% @cars.each do |car| %>
-        <%= car.model %>
+  <div class="d-flex w-100">
+    <div class="bookings cards">
+      <h3>My Bookings</h3>
+      <% @bookings.each do |booking| %>
+      <div class="bookings-card card-category d-flex flex-column">
+        <li>Status: <%= booking.status %> </li>
+        <li>Start date: <%= booking.start_date %> </li>
+        <li>End date: <%= booking.end_date %> </li>
+        <li>Car model: <%= booking.car.model %> </li>
+        <li>Owner: <%= booking.car.user.first_name %> <%= booking.car.user.last_name %> </li>
+      </div><br>
       <% end %>
     </div>
 
+    <div class="cars cards">
+      <h3>My Cars</h3>
+      <% @cars.each do |car| %>
+      <div class="cars-card card-category d-flex flex-column">
+        <li> <%= car.model %> </li>
+        <li> <%= car.color %> </li>
+        <li> <%= car.fuel %> </li>
+        <li> <%= car.price %> </li>
+      </div><br>
+      <% end %>
+    </div>
+
+    <div class="rented-cars cards">
+      <h3>Cars rented</h3>
+      <% @cars.each do |car| %>
+        <% car.bookings.each do |booking| %>
+          <div class="rented-cars-card card-category d-flex flex-column">
+            <li>Car rented: <%= car.model %> </li>
+            <li>Renter: <%= booking.user.first_name %> <%= booking.user.last_name %> </li>
+            <li>Status: <%= booking.status %> <%= link_to "Update Status", edit_booking_path(booking), class:"btn btn-primary" %> </li>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+   </div>
    </div>
 </div>
