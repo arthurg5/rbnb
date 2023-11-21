@@ -1,14 +1,18 @@
 <div class="container">
- <div class="card" style="background-image: url()">
-  <h1> <%= @car.model %> details</h1>
-  <p> <%= @car.description %> </p>
-  <p>Year: <%= @car.year %></p>
-  <p>Color: <%= @car.color %></p>
-  <p>Powered with: <%= @car.fuel %></p>
-  <p>Price: <%= @car.price %></p>
+ <div class="card">
+  <img src="" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title"> <%= @car.model %> details</h5>
+      <p> <%= @car.description %> </p>
+      <p class="card-text"> Year: <%= @car.year %></p>
+      <p class="card-text">Color: <%= @car.color %></p>
+      <p class="card-text">Powered with: <%= @car.fuel %></p>
+      <p class="card-text">Price: <%= @car.price %></p>
+    </div>
+
+    <div class="d-flex flex-row-reverse">
+      <button type="button" class="btn-gradient"> <%= link_to "Homepage", cars_path %> </button>
+      <button type="button" class="btn-gradient"> <%= link_to "Edit car's infos", edit_car_path %> </button>
+    </div>
   </div>
-<div class="d-flex flex-row-reverse">
-  <button type="button" class="btn-gradient"> <%= link_to "Back to homepage", cars_path %> </button>
-  <button type="button" class="btn-gradient"> <%= link_to "Edit the car's infos", edit_car_path %> </button>
-</div>
 </div>

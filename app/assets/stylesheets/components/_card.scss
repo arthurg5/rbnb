@@ -1,4 +1,4 @@
-//
+/*
 .card {
   background-size: cover;
   background-position: center;
@@ -35,9 +35,10 @@
 
 .cards{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 25px;
   flex-grow: 1;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   padding: 15px;
 }
+*/
