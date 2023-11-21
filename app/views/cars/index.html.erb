@@ -1,17 +1,20 @@
-<div class="container-cards-flex">
-    <div class="cards">
-        <div>
-            <% @cars.each do |car| %>
-              <div class="card" style="background-image: url()">
-              </div>
-              <p> <%= car.model %> </p>
-              <p> Car description: <%= car.description %> </p>
-              <p> Manufactured in: <%= car.year %> </p>
-              <p> Powerwed with: <%= car.fuel %> </p>
-              <p> Color: <%= car.color %> </p>
-              <p> Price: <%= car.price %> </p>
-            <% end %>
+<!-- page vrapper -->
+<div class="container">
+  <div class="container-cards-flex">
+      <div class="cards">
+          <div>
+              <% @cars.each do |car| %>
+                <div class="card" style="background-image: url()">
+                </div>
+                <p> <%= car.model %> </p>
+                <p> Car description: <%= car.description %> </p>
+                <p> Manufactured in: <%= car.year %> </p>
+                <p> Powerwed with: <%= car.fuel %> </p>
+                <p> Color: <%= car.color %> </p>
+                <p> Price: <%= car.price %> </p>
+              <% end %>
+          </div>
         </div>
       </div>
-    </div>
+  </div>
 </div>
