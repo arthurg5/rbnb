@@ -1,4 +1,5 @@
 class Car < ApplicationRecord
+  has_many_attached :photos
   # authentification
   # skip_before_action :authenticate_user!, only: :home
   # fuel choices

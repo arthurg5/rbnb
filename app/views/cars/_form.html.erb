@@ -5,5 +5,6 @@
   <%= f.input :color %>
   <%= f.input :fuel, collection: Car::FUEL %>
   <%= f.input :price %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit class: "btn btn-primary mt-4" %>
 <% end %>
