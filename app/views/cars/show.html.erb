@@ -3,19 +3,21 @@
   <br>
   <div class="row">
     <div class="col-sm-6 d-flex box1">
-       <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-border-left-radius">
-      <!-- Existing car images code -->
+        <% if @car.photos.present? %>
+          <%= cl_image_tag @car.photos.first.key, height: 300, width: 400, crop: :fill %>
+        <% end %>      <!-- Existing car images code -->
     </div>
 
     <div class="col-sm-6">
       <div class="d-flex justify-content-end box2">
-        <!-- Existing mini-pics code -->
-        <img class="mini-pic mini-pic1" src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dm9pdHVyZXxlbnwwfHwwfHx8MA%3D%3D" alt="voiture 1">
-        <img class="mini-pic mini-pic2 img-border-right-top-radius"src="https://plus.unsplash.com/premium_photo-1664391822888-2a056656af71?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHZvaXR1cmV8ZW58MHx8MHx8fDA%3D" alt="voiture 2">
-        <img class="mini-pic mini-pic3" src="https://images.unsplash.com/photo-1494905998402-395d579af36f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHZvaXR1cmV8ZW58MHx8MHx8fDA%3D" alt="voiture 3">
-        <img class="mini-pic mini-pic4 img-border-right-bottom-radius" src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHZvaXR1cmV8ZW58MHx8MHx8fDA%3D" alt="voiture 4">
+        <% if @car.photos.present? %>
+          <% @car.photos.drop(1).each do |photo| %>
+            <%= cl_image_tag photo.key, class: "mini-pic mini-pic1" %>
+          <% end %>
+        <% end %>
       </div>
     </div>
+
   </div>
 
   <div class="row">
