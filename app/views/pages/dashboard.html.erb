@@ -17,12 +17,8 @@
     </div>
 
     <div class="cars cards">
-<<<<<<< HEAD
-      <h4>My Cars</h4>
-=======
       <h3>My Cars</h3>
       <%= link_to "Add Car", new_car_path, class:"btn btn-primary" %> </li>
->>>>>>> 09a8be048b571738036a7f84e348f4812a241f9a
       <% @cars.each do |car| %>
       <div class="cars-card card-category d-flex flex-column">
         <li> <%= car.model %> </li>
