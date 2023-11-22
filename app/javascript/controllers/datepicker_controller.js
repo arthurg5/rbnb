@@ -9,6 +9,7 @@ export default class extends Controller {
 
     flatpickr(startDateInput, {
       dateFormat: 'd-m-Y',
+      minDate: 'today', 
       theme: 'light', // Format of the selected date
       // Add more configuration options as needed
       onClose: function(selectedDates) {
