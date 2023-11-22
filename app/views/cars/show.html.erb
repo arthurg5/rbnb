@@ -1,22 +1,28 @@
 <div class="container">
- <div class="card-big">
+<h3 class="card-title mt-3 mb-3"> <%= @car.model %></h3>
+<br>
+  <div class="row">
+    <div class="col-sm-6 d-flex box1">
+      <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-border-left-radius">
+    </div>
 
+    <div class="col-sm-6 d-flex">
+      <div class="d-flex box2">
+        <img class="mini-pic mini-pic1" src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dm9pdHVyZXxlbnwwfHwwfHx8MA%3D%3D" alt="voiture 1">
+        <img class="mini-pic mini-pic2 img-border-right-top-radius"src="https://plus.unsplash.com/premium_photo-1664391822888-2a056656af71?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHZvaXR1cmV8ZW58MHx8MHx8fDA%3D" alt="voiture 2">
+        <img class="mini-pic mini-pic3" src="https://images.unsplash.com/photo-1494905998402-395d579af36f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHZvaXR1cmV8ZW58MHx8MHx8fDA%3D" alt="voiture 3">
+        <img class="mini-pic mini-pic4 img-border-right-bottom-radius" src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHZvaXR1cmV8ZW58MHx8MHx8fDA%3D" alt="voiture 4">
+      </div>
+    </div>
+  </div>
+
+  <div class="card-big">
     <div class="card-body">
-      <h3 class="card-title"> <%= @car.model %></h3>
         <div class="d-flex mt-4">
-          <div class="box">
-
-            <% if @car.photos.present? %>
-              <% @car.photos.each do |photo| %>
-                <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
-              <% end %>
-            <% else %>
-              <img src="https://m.media-amazon.com/images/I/71E32iPE92L.__AC_SY300_SX300_QL70_ML2_.jpg" class="img-sizing">
-            <% end %>
-
           </div>
           <div class="box mt-3">
-            <p> <%= @car.description %> </p>
+            <h4 class="card-title text-start mb-3"> <%= @car.model %></h4>
+            <p class="card-text-bigger"> <%= @car.description %> </p>
             <p class="card-text-bigger"> Year: <%= @car.year %></p>
             <p class="card-text-bigger">Color: <%= @car.color %></p>
             <p class="card-text-bigger">Powered with: <%= @car.fuel %></p>
@@ -25,10 +31,4 @@
           </div>
     </div>
 
-    <div class="d-flex flex-row mb-3">
-      <button type="button" class="btn-gradient"> <%= link_to "Book this car", new_car_booking_path(@car) %> </button>
-      <button type="button" class="btn-gradient"> <%= link_to "Dashboard", dashboard_path %> </button>
-      <!-- <button type="button" class="btn-gradient"> <%= link_to "Edit car's infos", edit_car_path %> </button> -->
-    </div>
-  </div>
 </div>
