@@ -1,31 +1,8 @@
 <div class="container">
-<!-- CAROUSSEL HOME PAGE -->
-  <div id="carouselExample" class="carousel slide">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://www.guide-auto.com/wp-content/uploads/2022/10/ds-4-2021-3-4-anteriore-1024x576.jpg" height="350" width= "860" class="d-block w-100" alt="Voiture">
-      </div>
-      <div class="carousel-item">
-        <img src="https://www.carouleraoul.com/wp-content/uploads/2022/11/raw-1080x600.jpg" class="d-block w-100" height="350" width= "860" class="d-block img-fluid" alt="Voiture">
-      </div>
-      <div class="carousel-item">
-        <img src="https://www.topgear.com/sites/default/files/2022/07/6_0.jpg" class="d-block w-100" height="350" width= "860" class="d-block d-block img-fluid" alt="Voiture">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-
   <div class="container-cards-flex">
         <div class="cards">
           <% @cars.each do |car| %>
-            <div class="card">
+            <div class="card-index">
               <img src="https://www.topgear.com/sites/default/files/2022/07/6_0.jpg" alt="car picture" class="img-sizing">
               <h4> <%= car.model %> </h4>
               <% car.id %>
