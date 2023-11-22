@@ -26,6 +26,7 @@ require 'faker'
 
 puts 'Creating 5 fake users'
 
+
 5.times do
   user = User.create!(
     email: Faker::Internet.email,
@@ -96,5 +97,7 @@ puts 'Creating 5 fake users'
     address: "Paris 12"
   )
 end
+
+
 
 puts 'Seed creation is over!'

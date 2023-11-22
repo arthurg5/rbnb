@@ -1,28 +1,23 @@
-<h3>Dashboard pages</h3>
-
 <div class="container">
   <div class="row">
-  <div class="d-flex w-100">
+  <div class="">
     <div class="bookings cards">
-      <h4>My Bookings</h4>
+      <h3>My Bookings</h3>
       <% @bookings.each do |booking| %>
       <div class="bookings-card card-category d-flex flex-column">
         <li>Status: <%= booking.status %> </li>
         <li>Start date: <%= booking.start_date %> </li>
         <li>End date: <%= booking.end_date %> </li>
         <li>Car model: <%= booking.car.model %> </li>
+        <li>Car model: <%= booking.car.address %> </li>
         <li>Owner: <%= booking.car.user.first_name %> <%= booking.car.user.last_name %> </li>
       </div><br>
       <% end %>
     </div>
 
     <div class="cars cards">
-<<<<<<< HEAD
-      <h4>My Cars</h4>
-=======
       <h3>My Cars</h3>
       <%= link_to "Add Car", new_car_path, class:"btn btn-primary" %> </li>
->>>>>>> 09a8be048b571738036a7f84e348f4812a241f9a
       <% @cars.each do |car| %>
       <div class="cars-card card-category d-flex flex-column">
         <li> <%= car.model %> </li>
