@@ -35,9 +35,15 @@
 
 .img-sizing-home{
   width: 100%;
-  height: auto;
   display: block;
   border-radius: 5px;
+  margin: 0 auto;
+  padding: 0px;
+  text-align: center;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 .model-text-homepage{
@@ -45,6 +51,11 @@
   font-weight: 500;
   margin-bottom: 0px;
   padding-bottom: 0px;
+  padding-left: 10px;
+}
+
+.row{
+  margin: 0px;
 }
 
 .card-text-homepage{
@@ -55,14 +66,16 @@
   padding-top: 0px;
   margin-bottom: 0px;
   padding-bottom: 0px;
+  padding-left: 10px;
 }
 
 .link-homepage{
-  color: black;
+  color: #D23333;
   display: block;
   font-size: 0.9em;
   font-weight: 700;
+  padding-left: 10px;
   &:hover{
-    color: #D23333;
+  color: black;
   }
 }
