@@ -1,17 +1,19 @@
 <div class="container">
   <div class="container-cards-flex">
-        <div class="cards">
-          <% @cars.each do |car| %>
-            <div class="card-big">
-              <img src="https://www.topgear.com/sites/default/files/2022/07/6_0.jpg" alt="car picture" class="img-sizing">
-              <h4> <%= car.model %> </h4>
-              <% car.id %>
-              <p class="card-text"> Price: <%= car.price %> </p>
-              <div class="d-flex justify-content-between align-items-center mb-4">
-                <%= link_to 'More infos', car_path(car), class: 'btn btn-primary' %>
-              </div>
+      <div class="cards">
+        <% @cars.each do |car| %>
+          <div class="card-big">
+          <div class="card-index">
+            <img src="https://www.topgear.com/sites/default/files/2022/07/6_0.jpg" alt="car picture" class="img-sizing">
+            <h4> <%= car.model %> </h4>
+            <% car.id %>
+            <p class="card-text"> Price: <%= car.price %> </p>
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <%= link_to 'More infos', car_path(car), class: 'btn btn-primary' %>
             </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
