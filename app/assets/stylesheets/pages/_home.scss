@@ -59,4 +59,10 @@
 
 .link-homepage{
   color: black;
+  display: block;
+  font-size: 0.8em;
+  font-weight: 500;
+  &:hover{
+    color: #D23333;
+  }
 }
