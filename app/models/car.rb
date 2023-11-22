@@ -13,5 +13,6 @@ class Car < ApplicationRecord
   validates :fuel, presence: true
   validates :price, presence: true
   validates :description, presence: true
+  validates :address, presence: true
   validates :fuel, inclusion: { in: FUEL, message: "%{value} is not a valid fuel type" }
 end
