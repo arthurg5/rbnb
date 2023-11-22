@@ -28,12 +28,6 @@
         <div class="card-body cards mb-4">
           <% @cars.each do |car| %>
           <div class="cars-card card-category d-flex flex-column cards">
-            <% if car.photos %>
-              <% car.photos.each do |photo| %>
-              <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>')">
-              </div>
-              <% end %>
-            <% end %>
             <ul class="list-unstyled">
               <li><i class="fas fa-car"></i> <%= car.model %> </li>
               <li><i class="fa-solid fa-circle-info"></i> <%= car.description %> </li>
