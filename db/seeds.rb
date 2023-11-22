@@ -71,7 +71,7 @@ puts 'Creating 5 fake users'
     model: "Peugeot 3008",
     year: 2020,
     color: "grey",
-    fuel: "Ethanol Hybrid",
+    fuel: "Biofuels",
     price: 131.5,
     description: "ideal for family",
     address: "Paris 9"
