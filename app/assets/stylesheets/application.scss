@@ -16,3 +16,30 @@
 @import "components/typography";
 @import "components/button";
 @import "components/img";
+
+
+// pages
+@import "pages/home";
+
+// Import Flatpickr styles
+@import "flatpickr/dist/flatpickr.min.css";
+
+// Add custom styles for the datepicker inputs and placeholders
+.flatpickr-calendar {
+  background-color: white;
+  color: black;
+  border: 1px solid black; /* Set the input border to black */
+  /* Other styles as needed */
+}
+
+/* Override Flatpickr input border color */
+.flatpickr-input[type="text"], .flatpickr-input[type="text"]:focus {
+  border: 1px solid black !important; /* Set the input border to black */
+}
+
+
+/* Override focus border color */
+.flatpickr-calendar:focus-within {
+  border-color: black;
+}
+

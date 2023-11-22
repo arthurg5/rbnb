@@ -4,7 +4,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
-
   def create
     @car = Car.find(params[:car_id])
     @booking = Booking.new(booking_params1)
@@ -18,9 +17,6 @@ class BookingsController < ApplicationController
     end
   end
 
-
-
-
   def edit
     @booking = Booking.find(params[:id])
   end
@@ -30,7 +26,6 @@ class BookingsController < ApplicationController
     @booking.update(booking_params2)
     redirect_to dashboard_path
   end
-
 
   private
 

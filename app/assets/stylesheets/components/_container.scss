@@ -1,11 +1,39 @@
 .container-cards-flex{
-  padding: 15px;
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-wrap: wrap;
+  margin: 0px 0px;
+  width: 860px;
 }
 
 .container{
-  width: 800px;
+  width: 860px;
   margin: 0 auto;
+}
+
+.carousel{
+  width: 860px;
+}
+
+
+.box1{
+  width: 430px;
+  /* background-color: pink; */
+  flex-direction: column;
+}
+
+.box2{
+  width: 430px;
+  /* background-color: green; */
+  flex-wrap: wrap;
+}
+
+.row > *{
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.col-6-sm{
+  margin: 0px;
+  padding: 0px;
 }
