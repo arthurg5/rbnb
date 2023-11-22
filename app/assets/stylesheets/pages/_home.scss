@@ -19,3 +19,44 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+.homepage-container{
+  margin: 0 auto;
+  width: 92%;
+  height: auto;
+  display: block;
+}
+
+.card-homepage{
+  margin: 0 auto;
+  width: 180px;
+  height: 180px;
+}
+
+.img-sizing-home{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.model-text-homepage{
+  font-size: 0.9em;
+  font-weight: 500;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.card-text-homepage{
+  color: #8D8D8D;
+  font-size: 0.7em;
+  font-weight: 400;
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.link-homepage{
+  color: black;
+}
