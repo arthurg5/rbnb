@@ -1,47 +1,70 @@
-<div class="container">
+<div class="container mt-5">
   <div class="row">
-  <div class="">
-    <div class="bookings cards">
-      <h3>My Bookings</h3>
-      <% @bookings.each do |booking| %>
-      <div class="bookings-card card-category d-flex flex-column">
-        <li>Status: <%= booking.status %> </li>
-        <li>Start date: <%= booking.start_date %> </li>
-        <li>End date: <%= booking.end_date %> </li>
-        <li>Car model: <%= booking.car.model %> </li>
-        <li>Car model: <%= booking.car.address %> </li>
-        <li>Owner: <%= booking.car.user.first_name %> <%= booking.car.user.last_name %> </li>
-      </div><br>
-      <% end %>
-    </div>
-
-    <div class="cars cards">
-      <h3>My Cars</h3>
-      <%= link_to "Add Car", new_car_path, class:"btn btn-primary" %> </li>
-      <% @cars.each do |car| %>
-      <div class="cars-card card-category d-flex flex-column">
-        <li> <%= car.model %> </li>
-        <li> <%= car.color %> </li>
-        <li> <%= car.fuel %> </li>
-        <li> <%= car.price %> </li>
-        <%= link_to "Update Cars", edit_car_path(car), class:"btn btn-primary" %> </li>
-      </div><br>
-      <% end %>
-    </div>
-
-    <div class="rented-cars cards">
-      <h3>Cars rented</h3>
-      <% @cars.each do |car| %>
-        <% car.bookings.each do |booking| %>
-          <div class="rented-cars-card card-category d-flex flex-column">
-            <li>Car rented: <%= car.model %> </li>
-            <li>Renter: <%= booking.user.first_name %> <%= booking.user.last_name %> </li>
-            <li>Status: <%= booking.status %> <%= link_to "Update Status", edit_booking_path(booking), class:"btn btn-primary" %> </li>
+    <div class="col-lg-12">
+      <!-- My Bookings Card -->
+      <div class="bookings">
+        <h3 class="card-title">My Bookings</h3><br>
+        <div class="card-body cards mb-4">
+          <% @bookings.each do |booking| %>
+          <div class="bookings-card card-category d-flex flex-column cards">
+            <ul class="list-unstyled">
+              <li><i class="far fa-calendar"></i><strong> Date: </strong><%= booking.start_date %><strong> to </strong><%= booking.end_date %></li><br>
+              <li><i class="fas fa-info-circle"></i> Status: <%= booking.status %> </li>
+              <li><i class="fas fa-car"></i> Car model: <%= booking.car.model %> </li>
+              <li><i class="fas fa-map-marker-alt"></i> Car address: <%= booking.car.address %> </li>
+              <li><i class="fas fa-user"></i> Owner: <%= booking.car.user.first_name %> <%= booking.car.user.last_name %> </li>
+            </ul>
+            <div>
+              <i class="fas fa-info-circle"></i> Status: <%= link_to booking.status, edit_booking_path(booking), class:"btn btn-warning" %>
+            </div>
           </div>
-        <% end %>
-      <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <!-- My Cars Card -->
+      <div class="cars">
+        <h3 class="card-title">My Cars</h3><br>
+        <div class="card-body cards mb-4">
+          <% @cars.each do |car| %>
+          <div class="cars-card card-category d-flex flex-column cards">
+            <ul class="list-unstyled">
+              <li><i class="fas fa-car"></i> <%= car.model %> </li>
+              <li><i class="fa-solid fa-circle-info"></i> <%= car.description %> </li>
+              <li><i class="fas fa-paint-brush"></i> <%= car.color %> </li>
+              <li><i class="fas fa-gas-pump"></i> <%= car.fuel %> </li>
+              <li><i class="fas fa-dollar-sign"></i> <%= car.price %> </li>
+
+            </ul>
+            <div>
+              <%= link_to "Update Cars", edit_car_path(car), class:"btn btn-primary" %>
+            </div>
+          </div>
+          <% end %>
+          <div>
+              <%= link_to "Add Car", new_car_path, class:"btn btn-primary mb-3" %>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rented Cars Card -->
+      <div class="card rented-cars cards">
+        <h3 class="card-title">Cars Rented</h3>
+        <div class="card-body">
+          <% @cars.each do |car| %>
+            <% car.bookings.each do |booking| %>
+              <div class="rented-cars-card card-category d-flex flex-column">
+                <ul class="list-unstyled">
+                  <li><i class="fas fa-car"></i> Car rented: <%= car.model %> </li>
+                  <li><i class="fas fa-user"></i> Renter: <%= booking.user.first_name %> <%= booking.user.last_name %> </li>
+                  <li><i class="fas fa-info-circle"></i> Status: <%= booking.status %> <%= link_to "Update Status", edit_booking_path(booking), class:"btn btn-primary" %> </li>
+                </ul>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
     </div>
-   </div>
-   </div>
+  </div>
 </div>
 
