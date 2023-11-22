@@ -70,12 +70,62 @@ h3 {
   border-bottom-right-radius: 15px;
 }
 
+.card-index{
+  margin: 0 auto;
+  width: 280px;
+  height: 180px;
+}
+
+.img-sizing-index{
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 0px;
+  text-align: center;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.model-text-index{
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+}
+
+.card-text-index{
+  color: #8D8D8D;
+  font-size: 1em;
+  font-weight: 400;
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+}
+
 .cars-container{
   width: 1000px;
   margin: 0 auto;
 }
+
 .border-card-bottom{
   border: 1px solid #939593;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
+}
+
+.link-index{
+  color: #D23333;
+  display: block;
+  font-size: 0.9em;
+  font-weight: 700;
+  padding-left: 10px;
+  &:hover{
+  color: black;
+  }
 }
