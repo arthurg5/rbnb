@@ -24,78 +24,80 @@ require 'faker'
 # end
 # puts 'Seed creation is over!'
 
-puts 'Creating new user'
-
-# user1 = User.create!(
-#   email: "helene@gmail.com",
-#   password: "123456",
-#   first_name: "Hélène",
-#   last_name: "Allies"
-# )
-
-# car1 = user1.cars.create!(
-#   model: "Jaguar",
-#   year: "2019",
-#   fuel: "Diesel",
-#   color: "Red",
-#   price: 300,
-#   description: "Very fast but not ecolo"
-# )
-
-# puts "Car #{car1.id} created for user #{user1.id}"
-
-# user2 = User.create!(
-#   email: "albertine@gmail.com",
-#   password: "123456",
-#   first_name: "Albertine",
-#   last_name: "Champois"
-# )
-
-# user3 = User.create!(
-#   email: "george@gmail.com",
-#   password: "123456",
-#   first_name: "George",
-#   last_name: "Sand"
-# )
-
-# user4 = User.where(first_name: "Billy")
+puts 'Creating 5 fake users'
 
 
-puts "Cleaning database.........."
-User.destroy_all
-Car.destroy_all
-
-user4 = User.create!(
-  email: "billy@gmail.com",
-  password: "123456",
-  first_name: "Billy",
-  last_name: "Boop"
-)
-
-3.times do
-  car4 = user4.cars.create!(
-  model: Faker::Vehicle.model,
-  year: Faker::Vehicle.year,
-  fuel: "Gasoline",
-  color: Faker::Vehicle.color,
-  price: Faker::Commerce.price(range: 80..300),
-  description: Faker::Lorem.sentence,
-  address: Faker::Address.full_address
+5.times do
+  user = User.create!(
+    email: Faker::Internet.email,
+    password: Faker::Internet.password,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name
   )
-  puts "Car #{car4.id} created for user #{user4.id}"
+
+  puts "Creating cars for user #{user.id}"
+
+  user.cars.create!(
+    model: "Audi A3",
+    year: 2011,
+    color: "grey",
+    fuel: "Diesel",
+    price: 125.5,
+    description: "fast and comfortable",
+    address: "Paris 11"
+  )
+
+  user.cars.create!(
+    model: "Citroen electric",
+    year: 2020,
+    color: "orange",
+    fuel: "Electric",
+    price: 112.5,
+    description: "easy to drive and great for the environment",
+    address: "Vincennes"
+  )
+
+  user.cars.create!(
+    model: "Mitsubishi x force",
+    year: 2022,
+    color: "grey",
+    fuel: "Biofuels",
+    price: 107.5,
+    description: "ideal for long distances",
+    address: "Paris 10"
+  )
+
+  user.cars.create!(
+    model: "Peugeot 3008",
+    year: 2020,
+    color: "grey",
+    fuel: "Ethanol Hybrid",
+    price: 131.5,
+    description: "ideal for family",
+    address: "Paris 9"
+  )
+
+  user.cars.create!(
+    model: "Renault Megane",
+    year: 2018,
+    color: "red",
+    fuel: "Gasoline",
+    price: 95.5,
+    description: "very secure and comfortable",
+    address: "Montreuil"
+  )
+
+  user.cars.create!(
+    model: "Tesla",
+    year: 2022,
+    color: "white",
+    fuel: "Electric",
+    price: 155.5,
+    description: "high-class standard's car with safety features",
+    address: "Paris 12"
+  )
 end
 
-# 3.times do
-#   car3 = user3.cars.create!(
-#   model: Faker::Vehicle.model,
-#   year: Faker::Vehicle.year,
-#   fuel: "Biofuels",
-#   color: Faker::Vehicle.color,
-#   price: Faker::Commerce.price(range: 80..300),
-#   description: Faker::Lorem.sentence
-#   )
-#   puts "Car #{car3.id} created for user #{user3.id}"
-# end
 
 
 puts 'Seed creation is over!'
