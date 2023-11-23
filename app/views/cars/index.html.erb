@@ -1,29 +1,20 @@
-<div class="cars-container">
-    <div class="row mt-5">
-      <div class="cards-near-map col-6">
-        <% @cars.each do |car| %>
-          <div class="card-near-page h-100">
-             <% if car.photos.present? %>
-                <% photo = car.photos.first %>
-                <%= cl_image_tag photo.key, transformation: { fetch_format: :auto, w: 800, h: 600, crop: :fill, gravity: :auto }, alt: "car picture", class: "img-sizing-home" %>
-              <% else %>
-                <img src="https://source.unsplash.com/random/800x600/?<%= "#{car.model}" %>" alt="car picture" class="img-sizing-index">
-              <% end %>
-              <div class="border-card-bottom">
-                <p class="model-text-index mt-2"> <%= car.model %> </p>
-                <p class="card-text-index"> Price: <%= car.price %> per day </p>
-                  <div class="d-flex justify-content-between align-items-center mb-4" >
-                    <%= link_to 'More infos', car_path(car), class: 'link-index' %>
-                  </div>
+<div class="cars-container-home mt-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="row mt-5 cards-grid">
+         <% @cars.each do |car| %>
+          <div class= "col-3 mb-4">
+            <div class="card h-100">
+              <img src="https://source.unsplash.com/random/800x600/?<%= "#{car.model}" %>" alt="car picture" class="img-sizing-home">
+              <p class="model-text-homepage mt-2"> <%= car.model %> </p>
+              <p class="card-text-homepage"> Price: <%= car.price %> per day </p>
+              <div class="d-flex justify-content-between align-items-center mb-4" >
+                <%= link_to 'More infos', car_path(car), class: 'link-home' %>
               </div>
+            </div>
           </div>
         <% end %>
       </div>
-      <div class="col-6">
-      <div style="width: 100%; height: 600px;"
-        data-controller="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-      </div>
     </div>
+  </div>
 </div>
