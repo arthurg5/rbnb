@@ -17,9 +17,9 @@
 @import "components/button";
 @import "components/img";
 
-
 // pages
 @import "pages/home";
+@import "pages/index_page";
 
 // Import Flatpickr styles
 @import "flatpickr/dist/flatpickr.min.css";
@@ -42,4 +42,3 @@
 .flatpickr-calendar:focus-within {
   border-color: black;
 }
-
