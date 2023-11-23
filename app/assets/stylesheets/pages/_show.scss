@@ -39,16 +39,16 @@
 }
 
 .card-show{
-  width: 60%;
+  width: 70%;
   background-color: white;
   border-radius: 15px;
   color: $black;
-  position: sticky;
   border: 1px solid #C1BEBE;
   height: 100%;
   margin-bottom:15px;
   margin-top: 15px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  margin-left: 30%;
 }
 
 .form-control{
@@ -63,7 +63,8 @@
   }
 
   .car-description-show-light{
-    font-weight: 500;
+    font-weight: 700;
+    text-align: center;
   }
 
   .form-label{
