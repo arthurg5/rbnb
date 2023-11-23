@@ -1,6 +1,14 @@
 class CarsController < ApplicationController
   def index
     @cars = Car.all
+    @markers = @cars.geocoded.map do |car|
+      {
+        lat: car.latitude,
+        lng: car.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {flat: flat}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
   end
 
   def show
@@ -36,6 +44,6 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require("car").permit(:model, :year, :color, :fuel, :price, :description, :address, photos: [])
+    params.require("car").permit(:model, :year, :color, :fuel, :price, :description, :address, :longitude, :latitude, photos: [])
   end
 end
