@@ -26,21 +26,44 @@
       <div class="cars">
         <h3 class="card-title">My Cars</h3><br>
         <div class="card-body cards mb-4">
-          <% @cars.each do |car| %>
-          <div class="cars-card card-category d-flex flex-column cards">
-            <ul class="list-unstyled">
-              <li><i class="fas fa-car"></i> <%= car.model %> </li>
-              <li><i class="fa-solid fa-circle-info"></i> <%= car.description %> </li>
-              <li><i class="fas fa-paint-brush"></i> <%= car.color %> </li>
-              <li><i class="fas fa-gas-pump"></i> <%= car.fuel %> </li>
-              <li><i class="fas fa-dollar-sign"></i> <%= car.price %> </li>
-            </ul>
-            <div class="d-flex justify-content-between align-items-center mb-4" >
-                <%= link_to 'More infos', car_path(car), class: "btn btn-primary"%>
-                <%= link_to "Update Car", edit_car_path(car), class:"btn btn-primary"%>
+        <% @cars.each do |car| %>
+          <div class="cars-card card-category d-flex flex-column cards mb-4">
+            <div class="row">
+              <!-- Column for the list -->
+              <div class="col-md-7">
+                <ul class="list-unstyled">
+                  <li><i class="fas fa-car"></i> <%= car.model %> </li>
+                  <li><i class="fa-solid fa-circle-info"></i> <%= car.description %> </li>
+                  <li><i class="fas fa-paint-brush"></i> <%= car.color %> </li>
+                  <li><i class="fas fa-gas-pump"></i> <%= car.fuel %> </li>
+                  <li><i class="fas fa-dollar-sign"></i> <%= car.price %> </li>
+                </ul>
+              </div>
+
+              <!-- Column for the picture -->
+              <div class="col-md-5">
+                <% if car.photos.present? %>
+                  <div class="d-flex justify-content-end align-items-center mb-2">
+                    <% photo = car.photos.first %>
+                    <div class=" overflow-hidden border border-secondary p-1">
+                      <%= cl_image_tag photo.key, height: 127, width: 127, crop: :fill %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-auto">
+              <%= link_to 'More infos', car_path(car), class: "btn btn-primary" %>
+              <%= link_to "Update Car", edit_car_path(car), class: "btn btn-primary" %>
             </div>
           </div>
-          <% end %>
+        <% end %>
+
+
+
+
+
           <div>
               <%= link_to "Add Car", new_car_path, class:"btn btn-primary mb-3" %>
           </div>

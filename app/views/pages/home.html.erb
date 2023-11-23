@@ -7,7 +7,8 @@
          <% @cars.each do |car| %>
           <div class= "col-6 mb-4">
             <div class="card h-100">
-              <img src="https://www.topgear.com/sites/default/files/2022/07/6_0.jpg" alt="car picture" class="img-sizing-home">
+              
+              <img src="https://source.unsplash.com/random/800x600/?<%= "#{car.model}" %>" alt="car picture" class="img-sizing-home">
               <p class="model-text-homepage mt-2"> <%= car.model %> </p>
               <p class="card-text-homepage"> Price: <%= car.price %> per night </p>
               <div class="d-flex justify-content-between align-items-center mb-4" >
