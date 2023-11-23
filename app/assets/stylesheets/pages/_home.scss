@@ -52,8 +52,13 @@
 }
 
 .cars-container-home{
-  width: 1000px;
+  width: 1500px;
   margin: 0 auto;
+}
+
+.cards-grid {
+  gap: 2px;
+  justify-content: space-around;
 }
 
 .card-text-homepage{
