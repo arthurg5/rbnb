@@ -19,6 +19,8 @@ gem 'unsplash', '~> 2.0'
 
 gem "geocoder"
 
+gem "pg_search"
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
