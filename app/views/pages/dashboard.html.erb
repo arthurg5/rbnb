@@ -8,6 +8,7 @@
           <% @bookings.each do |booking| %>
           <div class="bookings-card card-category d-flex flex-column cards">
             <ul class="list-unstyled">
+              <li></li>
               <li><i class="far fa-calendar"></i><strong> Date: </strong><%= booking.start_date %><strong> to </strong><%= booking.end_date %></li><br>
               <li><i class="fas fa-car"></i> Car model: <%= booking.car.model %> </li>
               <li><i class="fas fa-map-marker-alt"></i> Car address: <%= booking.car.address %> </li>
@@ -33,10 +34,10 @@
               <li><i class="fas fa-paint-brush"></i> <%= car.color %> </li>
               <li><i class="fas fa-gas-pump"></i> <%= car.fuel %> </li>
               <li><i class="fas fa-dollar-sign"></i> <%= car.price %> </li>
-
             </ul>
-            <div>
-              <%= link_to "Update Cars", edit_car_path(car), class:"btn btn-primary" %>
+            <div class="d-flex justify-content-between align-items-center mb-4" >
+                <%= link_to 'More infos', car_path(car), class: "btn btn-primary"%>
+                <%= link_to "Update Car", edit_car_path(car), class:"btn btn-primary"%>
             </div>
           </div>
           <% end %>
@@ -56,11 +57,10 @@
                 <ul class="list-unstyled">
                   <li><i class="fas fa-car"></i> Car rented: <%= car.model %> </li>
                   <li><i class="fas fa-user"></i> Renter: <%= booking.user.first_name %> <%= booking.user.last_name %> </li>
-                  <li><i class="fas fa-info-circle"></i> Status: <%= booking.status %> <%= link_to "Update Status", edit_booking_path(booking), class:"btn btn-primary" %> </li>
                 </ul>
-              </div>
-              <div>
-                <i class="fas fa-info-circle"></i> Status: <%= link_to booking.status, edit_booking_path(booking), class:"btn btn-warning" %>
+                <div>
+                  <i class="fas fa-info-circle"></i> Status: <%= link_to booking.status, edit_booking_path(booking), class:"btn btn-warning" %>
+                </div>
               </div>
             <% end %>
           <% end %>

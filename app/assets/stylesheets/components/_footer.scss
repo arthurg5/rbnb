@@ -6,8 +6,10 @@
   text-align: center;
   height: 50px;
   padding: 40px 20px;
+
   color: rgba(0,0,0,0.3);
 }
+
 .footer-links {
   display: flex;
   align-items: center;
@@ -31,4 +33,9 @@
 .footer .fab {
   color: #D23333;
   font-size: 30px;
+}
+
+.container-gray{
+  background-color: #F4F4F4;
+  height: 100px;
 }
