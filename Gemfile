@@ -15,6 +15,8 @@ gem "dotenv-rails"
 
 gem "cloudinary"
 
+gem 'unsplash', '~> 2.0'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 

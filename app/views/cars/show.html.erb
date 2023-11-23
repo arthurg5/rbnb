@@ -2,23 +2,22 @@
   <h3 class="card-title mt-3 mb-3"><%= @car.model %></h3>
   <br>
   <div class="row">
-    <div class="col-sm-6 d-flex box1">
+    <div class="col-sm-12 d-flex justify-content-center" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+      <div class="d-flex flex-row p-3">
         <% if @car.photos.present? %>
-          <%= cl_image_tag @car.photos.first.key, height: 300, width: 400, crop: :fill %>
-        <% end %>      <!-- Existing car images code -->
-    </div>
-
-    <div class="col-sm-6">
-      <div class="d-flex justify-content-end box2">
-        <% if @car.photos.present? %>
-          <% @car.photos.drop(1).each do |photo| %>
-            <%= cl_image_tag photo.key, class: "mini-pic mini-pic1" %>
+          <% @car.photos.first(3).each do |photo| %>
+            <div class="mr-3 p-2">
+              <%= cl_image_tag photo.key, height: 150, width: 250, crop: :fill %>
+            </div>
           <% end %>
         <% end %>
       </div>
     </div>
-
   </div>
+
+
+
+
 
   <div class="row">
     <div class="col-md-6">

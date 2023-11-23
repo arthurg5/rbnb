@@ -24,6 +24,9 @@ require 'faker'
 # end
 # puts 'Seed creation is over!'
 
+
+
+
 puts 'Creating 5 fake users'
 
 
