@@ -1,22 +1,21 @@
-
-<footer>
-  <div class="container">
-    <div class="container-cards-flex">
-        <div class="cards">
-          <% @cars.each do |car| %>
-            <div class="card-big">
-            <div class="card-index">
-              <img src="https://www.topgear.com/sites/default/files/2022/07/6_0.jpg" alt="car picture" class="img-sizing">
-              <h4> <%= car.model %> </h4>
-              <% car.id %>
-              <p class="card-text"> Price: <%= car.price %> </p>
-              <div class="d-flex justify-content-between align-items-center mb-4">
-                <%= link_to 'More infos', car_path(car), class: 'btn btn-primary' %>
+<div class="cars-container">
+    <div class="row mt-5">
+      <div class="cards-near-map col-6">
+        <% @cars.each do |car| %>
+          <div class="card-near-page h-100">
+            <img src="http://kitt.lewagon.com/placeholder/cities/rio" alt="car picture" class="img-sizing-index">
+              <div class="border-card-bottom">
+                <p class="model-text-index mt-2"> <%= car.model %> </p>
+                <p class="card-text-index"> Price: <%= car.price %> per day </p>
+                  <div class="d-flex justify-content-between align-items-center mb-4" >
+                    <%= link_to 'More infos', car_path(car), class: 'link-index' %>
+                  </div>
               </div>
-            </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-6">
+        <img src="https://images.unsplash.com/photo-1682685797439-a05dd915cee9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fit-container" alt="">
       </div>
     </div>
-  </div>
-</footer>
+</div>

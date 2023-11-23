@@ -47,6 +47,11 @@
   padding-bottom: 0px;
 }
 
+.cars-container-home{
+  width: 1000px;
+  margin: 0 auto;
+}
+
 .card-text-homepage{
   color: #8D8D8D;
   font-size: 1em;
@@ -55,6 +60,21 @@
   padding-top: 0px;
   margin-bottom: 0px;
   padding-bottom: 0px;
+}
+
+.row{
+  margin: 0px;
+}
+
+.link-homepage{
+  color: #D23333;
+  display: block;
+  font-size: 0.9em;
+  font-weight: 700;
+  padding-left: 10px;
+  &:hover{
+  color: black;
+  }
 }
 
 .link-homepage{
