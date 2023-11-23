@@ -2,22 +2,22 @@
   <h3 class="card-title mt-3 mb-3"><%= @car.model %></h3>
   <br>
   <div class="row">
-    <div class="col-sm-12 d-flex justify-content-center" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+    <div class="col-sm-11 d-flex justify-content-center" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
       <div class="d-flex flex-row p-3">
         <% if @car.photos.present? %>
           <% @car.photos.first(3).each do |photo| %>
             <div class="mr-3 p-2">
-              <%= cl_image_tag photo.key, height: 150, width: 250, crop: :fill %>
+              <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
             </div>
           <% end %>
+        <% else %>
+          <img src="https://source.unsplash.com/random/300x200/?voiture-<%= "#{@car.model}" %>" alt="car picture" class="mr-3 p-2">
+          <img src="https://source.unsplash.com/random/300x200/?<%= "#{@car.model}" %>" alt="car picture" class="mr-3 p-2">
+          <img src="https://source.unsplash.com/random/300x200/?car-<%= "#{@car.model}" %>" alt="car picture" class="mr-3 p-2">
         <% end %>
       </div>
     </div>
   </div>
-
-
-
-
 
   <div class="row">
     <div class="col-md-6">
@@ -25,12 +25,15 @@
         <div class="card-body">
           <div class="d-flex">
             <div class="box mt-3">
-              <p class="car-description-show"><%= @car.description %> · <%= @car.address %></p></p>
-              <p class="card-text-details-show"> Manufactured in <%= @car.year %> · <%= @car.color %> ·
-              using <%= @car.fuel %>
+              <p class="car-description-show"><%= @car.description %></p>
+              <p class="card-text-details-show"> Manufactured in <%= @car.year %> · <%= @car.color %>
               <hr class="hr-show space-around">
               <p class="card-text-details-show"> <i class="fa-solid fa-hand-holding-dollar fa-xl" style="color: #AEE6E6;"></i> <%= @car.price %> €</p>
               <hr class="hr-show space-around">
+              <i class="fa-solid fa-location-dot fa-xl" style="color: #AEE6E6"></i> <%= @car.address %>
+              <hr class="hr-show space-around">
+              <i class="fa-solid fa-power-off fa-xl" style="color: #AEE6E6"></i> <%= @car.fuel %> <%= @car.fuel %>
+
             </div>
           </div>
         </div>

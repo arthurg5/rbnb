@@ -2,9 +2,10 @@
 @import url("pages/cities.css");
 
 body {
-  margin: 0;
   font-family: 'Varela Round', sans-serif;
   font-size: 18px;
+  min-height: 100vh;
+  background-color: white;
 }
 
 h1, h2, h3 {
