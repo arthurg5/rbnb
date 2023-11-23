@@ -5,6 +5,7 @@
   width: 1100px;
   margin: 0 auto;
   /* background-color: $light-gray; */
+  height: 70vh;
 }
 
 .car-description-show{
@@ -53,6 +54,7 @@
 .form-control{
   background-color: white;
   border-radius: 5px;
+  border-color: #C1BEBE;
 }
 
 .create-booking-header-text{
@@ -67,3 +69,15 @@
   .form-label{
    font-weight: 500;
   }
+
+.form-control-border{
+    border-color: #C1BEBE;
+  }
+
+  .form-label{
+    font-size: 1em;
+  }
+
+#booking_date_input {
+  border-color: #C1BEBE !important;
+}
