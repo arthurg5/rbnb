@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-show">
   <h3 class="card-title mt-3 mb-3"><%= @car.model %></h3>
   <br>
   <div class="row">
@@ -24,25 +24,23 @@
     <div class="col-md-6">
       <div class="card-big">
         <div class="card-body">
-          <div class="d-flex mt-4">
+          <div class="d-flex">
             <div class="box mt-3">
-              <h4 class="card-title text-start mb-3"><%= @car.model %></h4>
-              <p class="card-text-bigger"><%= @car.description %></p>
-              <!-- Other car details -->
-              <p class="card-text-bigger"> Year: <%= @car.year %></p>
-              <p class="card-text-bigger">Color: <%= @car.color %></p>
-              <p class="card-text-bigger">Powered with: <%= @car.fuel %></p>
-              <p class="card-text-bigger">Price: <%= @car.price %></p>
-              <p class="card-text-bigger">Address: <%= @car.address %></p>
+              <p class="car-description-show"><%= @car.description %> · <%= @car.address %></p></p>
+              <p class="card-text-details-show"> Manufactured in <%= @car.year %> · <%= @car.color %> ·
+              using <%= @car.fuel %>
+              <hr class="hr-show space-around">
+              <p class="card-text-details-show"> <i class="fa-solid fa-hand-holding-dollar fa-xl" style="color: #AEE6E6;"></i> <%= @car.price %> €</p>
+              <hr class="hr-show space-around">
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-md-6 pr-0">
+    <div class="col-md-6">
       <!-- Booking form card -->
-      <div class="card mt-3" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); color: black;">
+      <div class="card card-show mt-3">
         <div class="card-body">
           <%= render 'bookings/new', booking: Booking.new, car: @car %>
         </div>

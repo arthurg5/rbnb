@@ -18,13 +18,11 @@
 
 .box1{
   width: 430px;
-  /* background-color: pink; */
   flex-direction: column;
 }
 
 .box2{
   width: 430px;
-  /* background-color: green; */
   flex-wrap: wrap;
 }
 
@@ -36,4 +34,8 @@
 .col-6-sm{
   margin: 0px;
   padding: 0px;
+}
+
+body{
+  background-color: white;
 }
