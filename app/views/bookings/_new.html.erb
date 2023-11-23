@@ -1,4 +1,4 @@
-<h2 class="my-4">Create a Booking</h2>
+<h2 class="car-description-show-light my-4">Create a Booking</h2>
 <%= simple_form_for([car, booking]) do |f| %>
   <div class="form-group">
     <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" }, class: "form-control white-input", placeholder: "DD-MM-YYYY" } %>

@@ -2,6 +2,9 @@ class Car < ApplicationRecord
   has_many_attached :photos
   # authentification
   # skip_before_action :authenticate_user!, only: :home
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
   # fuel choices
   FUEL = %w(Diesel Gasoline Biofuels LPG Electric Ethanol Hybrid)
   belongs_to :user
