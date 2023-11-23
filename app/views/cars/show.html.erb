@@ -19,22 +19,21 @@
     </div>
   </div>
 
-
-
-
-
   <div class="row">
     <div class="col-md-6">
       <div class="card-big">
         <div class="card-body">
           <div class="d-flex">
             <div class="box mt-3">
-              <p class="car-description-show"><%= @car.description %> · <%= @car.address %></p></p>
-              <p class="card-text-details-show"> Manufactured in <%= @car.year %> · <%= @car.color %> ·
-              using <%= @car.fuel %>
+              <p class="car-description-show"><%= @car.description %></p>
+              <p class="card-text-details-show"> Manufactured in <%= @car.year %> · <%= @car.color %>
               <hr class="hr-show space-around">
               <p class="card-text-details-show"> <i class="fa-solid fa-hand-holding-dollar fa-xl" style="color: #AEE6E6;"></i> <%= @car.price %> €</p>
               <hr class="hr-show space-around">
+              <i class="fa-solid fa-location-dot fa-xl" style="color: #AEE6E6"></i> <%= @car.address %>
+              <hr class="hr-show space-around">
+              <i class="fa-solid fa-power-off fa-xl" style="color: #AEE6E6"></i> <%= @car.fuel %> <%= @car.fuel %>
+
             </div>
           </div>
         </div>

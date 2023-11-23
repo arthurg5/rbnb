@@ -5,6 +5,7 @@
   width: 1100px;
   margin: 0 auto;
   /* background-color: $light-gray; */
+  height: 70vh;
 }
 
 .car-description-show{
@@ -38,21 +39,22 @@
 }
 
 .card-show{
-  width: 60%;
+  width: 70%;
   background-color: white;
   border-radius: 15px;
   color: $black;
-  position: sticky;
   border: 1px solid #C1BEBE;
   height: 100%;
   margin-bottom:15px;
   margin-top: 15px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  margin-left: 30%;
 }
 
 .form-control{
   background-color: white;
   border-radius: 5px;
+  border-color: #C1BEBE;
 }
 
 .create-booking-header-text{
@@ -61,9 +63,22 @@
   }
 
   .car-description-show-light{
-    font-weight: 500;
+    font-weight: 700;
+    text-align: center;
   }
 
   .form-label{
    font-weight: 500;
   }
+
+.form-control-border{
+    border-color: #C1BEBE;
+  }
+
+  .form-label{
+    font-size: 1em;
+  }
+
+#booking_date_input {
+  border-color: #C1BEBE !important;
+}

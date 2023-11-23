@@ -1,5 +1,5 @@
 @import "../config/colors";
-
+/*
 .btn-gradient {
   color: $white;
   text-shadow: 1px 1px ;
@@ -17,12 +17,24 @@
     background: linear-gradient($rich-black, $btn-dark-blue);
     color:$white;
     text-shadow: -1px 1px $btn-dark-blue;
-    // transform: rotate(360deg)
   }
 }
-
+*/
 a{
   text-decoration: none;
   color: rgb(41, 40, 40);
   font-weight: 500;
+}
+
+.btn-primary{
+  font-size: 1em;
+  background-color: $light-blue;
+  color: black;
+  text-shadow: 1px 1px 1px white;
+  width: 100%;
+  border-radius: 5px;
+  &:hover{
+    background-color: black;
+    color: $light-blue;
+  }
 }
