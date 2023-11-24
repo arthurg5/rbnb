@@ -95,22 +95,37 @@
             </div>
             </div>
 
-            <div class="tab-pane fade show" id="rentedcarsSection">
-              <div class="rented-cars">
-              <h3 class="card-title">Cars Rented</h3><br>
-              <div class="card-body cards mb-4" style="border-radius: 5px">
-                <% @cars.each do |car| %>
-                  <% car.bookings.each do |booking| %>
-                    <div class="rented-cars-card card-category d-flex flex-column cards">
-                      <ul class="list-unstyled">
-                        <li><i class="fas fa-car"></i> Car rented: <%= car.model %> </li>
-                        <li><i class="fas fa-user"></i> Renter: <%= booking.user.first_name %> <%= booking.user.last_name %> </li>
-                      </ul>
-                      <div>
-                        <i class="fas fa-info-circle"></i> Status: <%= link_to booking.status, edit_booking_path(booking), class:"btn btn-warning" %>
-                      </div>
+
+          <div class="tab-pane fade show" id="rentedcarsSection">
+            <div class="rented-cars">
+            <h3 class="card-title">Cars Rented</h3><br>
+            <div class="card-body cards mb-4" style="border-radius: 5px">
+              <% @cars.each do |car| %>
+                <% car.bookings.each do |booking| %>
+                  <div class="rented-cars-card card-category d-flex flex-column cards" style="border-radius: 5px">
+                    <ul class="list-unstyled">
+                      <li><i class="fas fa-car"></i> Car rented: <%= car.model %> </li>
+                      <li><i class="fas fa-user"></i> Renter: <%= booking.user.first_name %> <%= booking.user.last_name %> </li>
+                    </ul>
+                    <div>
+                      <i class="fas fa-info-circle"></i> Status:
+                      <% case booking.status %>
+                        <% when 'Accepted' %>
+                          <%= link_to booking.status, edit_booking_path(booking), class: "btn btn-success", style: "border-radius: 5px; font-weight: bold;" %>
+                        <% when 'Rejected' %>
+                          <%= link_to booking.status, edit_booking_path(booking), class: "btn btn-danger", style: "border-radius: 5px; font-weight: bold;" %>
+                        <% when 'Pending' %>
+                          <%= link_to booking.status, edit_booking_path(booking), class: "btn btn-warning", style: "border-radius: 5px; font-weight: bold;" %>
+                        <% when 'Cancelled' %>
+                          <%= link_to booking.status, edit_booking_path(booking), class: "btn btn-secondary", style: "border-radius: 5px; font-weight: bold;" %>
+                        <% when 'Finalized' %>
+                          <%= link_to booking.status, edit_booking_path(booking), class: "btn btn-light", style: "border-radius: 5px; font-weight: bold;" %>
+                        <% else %>
+                          <%= link_to booking.status, edit_booking_path(booking), class: "btn btn-primary", style: "border-radius: 5px; font-weight: bold;" %>
+                      <% end %>
                     </div>
-                  <% end %>
+                  </div>
+                <% end %>
                 <% end %>
               </div>
             </div>
