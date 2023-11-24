@@ -1,3 +1,5 @@
+@import "../config/fonts";
+
 .container-cards-flex{
   background-color: rgb(255, 255, 255);
   display: flex;
@@ -35,4 +37,18 @@
 .col-6-sm{
   margin: 0px;
   padding: 0px;
+}
+
+.container-fluid{
+  background-color: #f3fdfe;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+body{
+  font-family: $body-font
+}
+
+h1, h2, h3, h4, h5{
+  font-family: $headers-font;
 }
