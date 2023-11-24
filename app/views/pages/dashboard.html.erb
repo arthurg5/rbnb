@@ -131,6 +131,30 @@
             </div>
           </div>
 
+          <div>
+              <%= link_to "Add Car", new_car_path, class:"btn btn-primary-rentcar mb-3" %>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rented Cars Card -->
+      <div class="rented-cars">
+        <h3 class="card-title">Cars Rented</h3><br>
+        <div class="card-body cards mb-4">
+          <% @cars.each do |car| %>
+            <% car.bookings.each do |booking| %>
+              <div class="rented-cars-card card-category d-flex flex-column cards">
+                <ul class="list-unstyled">
+                  <li><i class="fas fa-car"></i> Car rented: <%= car.model %> </li>
+                  <li><i class="fas fa-user"></i> Renter: <%= booking.user.first_name %> <%= booking.user.last_name %> </li>
+                </ul>
+                <div>
+                  <i class="fas fa-info-circle"></i> Status: <%= link_to booking.status, edit_booking_path(booking), class:"btn btn-warning" %>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+
         </div>
       </div>
     </div>
