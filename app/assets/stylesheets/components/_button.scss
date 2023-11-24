@@ -1,25 +1,4 @@
 @import "../config/colors";
-/*
-.btn-gradient {
-  color: $white;
-  text-shadow: 1px 1px ;
-  padding: 8px 24px;
-  border-radius: 4px;
-  font-weight: 500;
-  background: linear-gradient($btn-linear-gradient-light-blue, $btn-linear-gradient-medium-blue);
-  border: 1px solid $btn-dark-blue;
-  font-size: 1em;
-  margin-top: 30px;
-  transition: transform 0.5s;
-  width: 100%;
-  cursor: pointer;
-  &:hover {
-    background: linear-gradient($rich-black, $btn-dark-blue);
-    color:$white;
-    text-shadow: -1px 1px $btn-dark-blue;
-  }
-}
-*/
 a{
   text-decoration: none;
   color: rgb(41, 40, 40);
@@ -33,8 +12,17 @@ a{
   text-shadow: 1px 1px 1px white;
   width: 100%;
   border-radius: 5px;
+  opacity: 1;
+  border-color: none;
   &:hover{
-    background-color: black;
-    color: $light-blue;
+    background-color: $light-blue;
+    opacity: 0.9;
+    color: black;
   }
+}
+
+.btn-primary:focus{
+  background-color: $light-blue;
+  opacity: 0.9;
+  color: black;
 }
