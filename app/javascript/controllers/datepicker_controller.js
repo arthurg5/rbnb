@@ -1,17 +1,15 @@
-// datepicker_controller.js
 import { Controller } from "@hotwired/stimulus"
 import flatpickr from "flatpickr";
 
 export default class extends Controller {
   connect() {
-    const startDateInput = document.getElementById('booking_start_date'); // Replace with your start_date input ID
-    const endDateInput = document.getElementById('booking_end_date'); // Replace with your end_date input ID
+    const startDateInput = document.getElementById('booking_start_date');
+    const endDateInput = document.getElementById('booking_end_date');
 
     flatpickr(startDateInput, {
       dateFormat: 'd-m-Y',
-      minDate: 'today', 
-      theme: 'light', // Format of the selected date
-      // Add more configuration options as needed
+      minDate: 'today',
+      theme: 'light',
       onClose: function(selectedDates) {
         endDateCalendar.set('minDate', selectedDates[0] || null);
         validateDates(startDateInput, endDateInput);
@@ -20,8 +18,7 @@ export default class extends Controller {
 
     const endDateCalendar = flatpickr(endDateInput, {
       dateFormat: 'd-m-Y',
-      theme: 'light', // Format of the selected date
-      // Add more configuration options as needed
+      theme: 'light',
       onClose: function(selectedDates) {
         validateDates(startDateInput, endDateInput);
       }
@@ -32,12 +29,10 @@ export default class extends Controller {
       const endDate = endInput.value ? new Date(endInput.value) : null;
 
       if (startDate && endDate && endDate < startDate) {
-        endInput.value = ""; // Clear end_date if it's before start_date
-        endInput.classList.add('is-invalid'); // Optional: Add a visual indicator for invalid input
-        // Add additional logic to handle invalid date range if needed
+        endInput.value = "";
+        endInput.classList.add('is-invalid');
       } else {
-        endInput.classList.remove('is-invalid'); // Optional: Remove the visual indicator for invalid input
-        // Additional logic if the date range is valid
+        endInput.classList.remove('is-invalid');
       }
     }
   }

@@ -1,14 +1,22 @@
+<style>
+  .nav-link {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    /* You can adjust other text properties here */
+  }
+</style>
+
 <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link active" data-bs-toggle="tab" href="#rentedcarsSection">Rented Cars</a>
+      <a class="nav-link active" data-bs-toggle="tab" href="#rentedcarsSection">RENTED CARS</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="tab" href="#mycarsSection">My cars</a>
+      <a class="nav-link" data-bs-toggle="tab" href="#mycarsSection">MY CARS</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="tab" href="#bookingsSection">My bookings</a>
+      <a class="nav-link" data-bs-toggle="tab" href="#bookingsSection">MY BOOKINGS</a>
     </li>
-  </ul>
+</ul>
 
 
   <div class="container">
@@ -31,7 +39,7 @@
                             <li><i class="fa-solid fa-circle-info"></i> <%= car.description %> </li>
                             <li><i class="fas fa-paint-brush"></i> <%= car.color %> </li>
                             <li><i class="fas fa-gas-pump"></i> <%= car.fuel %> </li>
-                            <li><i class="fas fa-dollar-sign"></i> <%= car.price %>/d </li>
+                            <li><i class="fas fa-dollar-sign"></i> <%= car.price %>/day </li>
                           </ul>
                         </div>
                         <!-- Column for the picture -->
