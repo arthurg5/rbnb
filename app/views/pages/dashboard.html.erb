@@ -7,11 +7,11 @@
 </style>
 
 <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" data-bs-toggle="tab" href="#rentedcarsSection">RENTED CARS</a>
+  <li class="nav-item">
+      <a class="nav-link active" data-bs-toggle="tab" href="#mycarsSection">MY CARS</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="tab" href="#mycarsSection">MY CARS</a>
+      <a class="nav-link" data-bs-toggle="tab" href="#rentedcarsSection">RENTED CARS</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" data-bs-toggle="tab" href="#bookingsSection">MY BOOKINGS</a>
@@ -23,12 +23,15 @@
     <div class="row justify-content-center">
       <div class="col-lg-12">
         <div class="tab-content">
-          <div class="tab-pane fade show" id="mycarsSection">
+
+          <div class="tab-pane fade show active" id="mycarsSection">
           <div class="cars">
-              <h3 class="card-title">My Cars</h3><br>
+              <div class="d-flex justify-content-between mb-2 p-3 align-items-center">
+                <h3 class="card-title">My Cars</h3><br>
+                <h5><%= link_to "Add a Car", new_car_path, class:"btn btn-outline-dark"%></h5>
+              </div>
               <div class="card-body cards mb-4" style="border-radius: 5px">
               <% @cars.each do |car| %>
-
                   <div class="cars-card card-category d-flex flex-column cards mb-4" style="border-radius: 5px">
                     <%= link_to car_path(car) do %>
                       <div class="row">
@@ -52,18 +55,15 @@
                             </div>
                           </div>
                         <% end %>
-
                         </div>
                       </div>
                       <div class="d-flex justify-content-between mt-auto">
-                        <%= link_to "Update Car", edit_car_path(car), class: "btn btn-primary" %>
+                        <%= link_to "Update", edit_car_path(car), class: "btn btn-primary" %>
                       </div>
                     <% end %>
                   </div>
               <% end %>
-                <div>
-                    <%= link_to "Add Car", new_car_path, class:"btn btn-primary mb-3" %>
-                </div>
+
               </div>
             </div>
             </div>
