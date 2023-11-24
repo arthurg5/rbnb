@@ -1,68 +1,135 @@
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-lg-12">
-      <!-- My Bookings Card -->
-      <div class="bookings">
-        <h3 class="card-title">My Bookings</h3><br>
-        <div class="card-body cards mb-4">
-          <% @bookings.each do |booking| %>
-          <div class="bookings-card card-category d-flex flex-column cards">
-            <ul class="list-unstyled">
-              <li></li>
-              <li><i class="far fa-calendar"></i><strong> Date: </strong><%= booking.start_date %><strong> to </strong><%= booking.end_date %></li><br>
-              <li><i class="fas fa-car"></i> Car model: <%= booking.car.model %> </li>
-              <li><i class="fas fa-map-marker-alt"></i> Car address: <%= booking.car.address %> </li>
-              <li><i class="fas fa-user"></i> Owner: <%= booking.car.user.first_name %> <%= booking.car.user.last_name %> </li>
-            </ul>
-            <div>
-              <i class="fas fa-info-circle"></i> Status: <%= booking.status %>
-            </div>
-          </div>
-          <% end %>
-        </div>
-      </div>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-bs-toggle="tab" href="#rentedcarsSection">Rented Cars</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#mycarsSection">My cars</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#bookingsSection">My bookings</a>
+    </li>
+  </ul>
 
-      <!-- My Cars Card -->
-      <div class="cars">
-        <h3 class="card-title">My Cars</h3><br>
-        <div class="card-body cards mb-4">
-        <% @cars.each do |car| %>
-          <div class="cars-card card-category d-flex flex-column cards mb-4">
-            <div class="row">
-              <!-- Column for the list -->
-              <div class="col-md-7">
-                <ul class="list-unstyled">
-                  <li><i class="fas fa-car"></i> <%= car.model %> </li>
-                  <li><i class="fa-solid fa-circle-info"></i> <%= car.description %> </li>
-                  <li><i class="fas fa-paint-brush"></i> <%= car.color %> </li>
-                  <li><i class="fas fa-gas-pump"></i> <%= car.fuel %> </li>
-                  <li><i class="fas fa-dollar-sign"></i> <%= car.price %> </li>
-                </ul>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <div class="tab-content">
+          <div class="tab-pane fade show" id="mycarsSection">
+          <div class="cars">
+              <h3 class="card-title">My Cars</h3><br>
+              <div class="card-body cards mb-4" style="border-radius: 5px">
+              <% @cars.each do |car| %>
+
+                  <div class="cars-card card-category d-flex flex-column cards mb-4" style="border-radius: 5px">
+                    <%= link_to car_path(car) do %>
+                      <div class="row">
+                        <!-- Column for the list -->
+                        <div class="col-md-6">
+                          <ul class="list-unstyled">
+                            <li><i class="fas fa-car"></i> <%= car.model %> </li>
+                            <li><i class="fa-solid fa-circle-info"></i> <%= car.description %> </li>
+                            <li><i class="fas fa-paint-brush"></i> <%= car.color %> </li>
+                            <li><i class="fas fa-gas-pump"></i> <%= car.fuel %> </li>
+                            <li><i class="fas fa-dollar-sign"></i> <%= car.price %>/d </li>
+                          </ul>
+                        </div>
+                        <!-- Column for the picture -->
+                        <div class="col-md-6">
+                        <% if car.photos.present? %>
+                          <div class="d-flex justify-content-end align-items-center mb-2">
+                            <% photo = car.photos.first %>
+                            <div class="overflow-hidden p-0" style="border-radius: 5px;">
+                              <%= cl_image_tag photo.key, height: 150, width: 170, crop: :fill %>
+                            </div>
+                          </div>
+                        <% end %>
+
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-between mt-auto">
+                        <%= link_to "Update Car", edit_car_path(car), class: "btn btn-primary" %>
+                      </div>
+                    <% end %>
+                  </div>
+              <% end %>
+                <div>
+                    <%= link_to "Add Car", new_car_path, class:"btn btn-primary mb-3" %>
+                </div>
               </div>
+            </div>
+            </div>
 
-              <!-- Column for the picture -->
-              <div class="col-md-5">
-                <% if car.photos.present? %>
-                  <div class="d-flex justify-content-end align-items-center mb-2">
-                    <% photo = car.photos.first %>
-                    <div class=" overflow-hidden border border-secondary p-1">
-                      <%= cl_image_tag photo.key, height: 127, width: 127, crop: :fill %>
+          <div class="tab-pane fade show" id="bookingsSection">
+            <div class="col-lg-12">
+            <!-- My Bookings Card -->
+            <div class="bookings">
+              <h3 class="card-title">My Bookings</h3><br>
+              <div class="card-body cards mb-4" style="border-radius: 5px">
+                <% @bookings.each do |booking| %>
+                  <div class="bookings-card card-category d-flex flex-column cards" style="border-radius: 5px">
+                    <div class="row">
+                      <ul class="list-unstyled col-md-7">
+                        <li></li>
+                        <li><i class="far fa-calendar"></i><strong> Date: </strong><%= booking.start_date %><strong> to </strong><%= booking.end_date %></li><br>
+                        <li><i class="fas fa-car"></i> Car model: <%= booking.car.model %> </li>
+                        <li><i class="fas fa-map-marker-alt"></i> Car address: <%= booking.car.address %> </li>
+                        <li><i class="fas fa-user"></i> Owner: <%= booking.car.user.first_name %> <%= booking.car.user.last_name %> </li>
+                        <li><i class="fas fa-dollar-sign"></i> <%= booking.total_price %> </li>
+                      </ul>
+                      <div class="col-md-5">
+                        <div class="d-flex justify-content-end align-items-center mb-2">
+                          <div class="overflow-hidden p-0" style="border-radius: 5px;">
+                            <img src="https://source.unsplash.com/random/150x150/?car-<%= "#{booking.car.model}" %>" alt="car picture">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <i class="fas fa-info-circle"></i> Status: <%= booking.status %>
                     </div>
                   </div>
                 <% end %>
               </div>
             </div>
+            </div>
+            </div>
 
-            <div class="d-flex justify-content-between mt-auto">
-              <%= link_to 'More infos', car_path(car), class: "btn btn-primary" %>
-              <%= link_to "Update Car", edit_car_path(car), class: "btn btn-primary" %>
+
+          <div class="tab-pane fade show" id="rentedcarsSection">
+            <div class="rented-cars">
+            <h3 class="card-title">Cars Rented</h3><br>
+            <div class="card-body cards mb-4" style="border-radius: 5px">
+              <% @cars.each do |car| %>
+                <% car.bookings.each do |booking| %>
+                  <div class="rented-cars-card card-category d-flex flex-column cards" style="border-radius: 5px">
+                    <ul class="list-unstyled">
+                      <li><i class="fas fa-car"></i> Car rented: <%= car.model %> </li>
+                      <li><i class="fas fa-user"></i> Renter: <%= booking.user.first_name %> <%= booking.user.last_name %> </li>
+                    </ul>
+                    <div>
+                      <i class="fas fa-info-circle"></i> Status:
+                      <% case booking.status %>
+                        <% when 'Accepted' %>
+                          <%= link_to booking.status, edit_booking_path(booking), class: "btn btn-success", style: "border-radius: 5px; font-weight: bold;" %>
+                        <% when 'Rejected' %>
+                          <%= link_to booking.status, edit_booking_path(booking), class: "btn btn-danger", style: "border-radius: 5px; font-weight: bold;" %>
+                        <% when 'Pending' %>
+                          <%= link_to booking.status, edit_booking_path(booking), class: "btn btn-warning", style: "border-radius: 5px; font-weight: bold;" %>
+                        <% when 'Cancelled' %>
+                          <%= link_to booking.status, edit_booking_path(booking), class: "btn btn-secondary", style: "border-radius: 5px; font-weight: bold;" %>
+                        <% when 'Finalized' %>
+                          <%= link_to booking.status, edit_booking_path(booking), class: "btn btn-light", style: "border-radius: 5px; font-weight: bold;" %>
+                        <% else %>
+                          <%= link_to booking.status, edit_booking_path(booking), class: "btn btn-primary", style: "border-radius: 5px; font-weight: bold;" %>
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+                <% end %>
+              </div>
             </div>
           </div>
-        <% end %>
-
-
-
-
 
           <div>
               <%= link_to "Add Car", new_car_path, class:"btn btn-primary-rentcar mb-3" %>
@@ -87,8 +154,13 @@
               </div>
             <% end %>
           <% end %>
+
         </div>
       </div>
     </div>
   </div>
+
+
+
+
 </div>
