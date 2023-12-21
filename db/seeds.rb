@@ -1,29 +1,5 @@
 require 'faker'
 
-# puts 'Creating 10 fake users'
-# 10.times do
-#   user = User.create!(
-#     email: Faker::Internet.email,
-#     password: Faker::Internet.password,
-#     first_name: Faker::Name.first_name,
-#     last_name: Faker::Name.last_name
-#   )
-
-#   puts "Creating cars for user #{user.id}"
-#   3.times do
-#     car = user.cars.create!(
-#       model: Faker::Vehicle.model,
-#       year: Faker::Vehicle.year,
-#       fuel: "Gasoline",
-#       color: Faker::Vehicle.color,
-#       price: Faker::Commerce.price(range: 80..300),
-#       description: Faker::Lorem.sentence
-#     )
-#     puts "Car #{car.id} created for user #{user.id}"
-#   end
-# end
-# puts 'Seed creation is over!'
-
 Booking.destroy_all
 Car.destroy_all
 User.destroy_all
@@ -38,7 +14,8 @@ car_models = [
     fuel: "Diesel",
     price: 125.5,
     description: "fast and comfortable",
-    address: "11 rue Théodore de Banville, 75017 Paris"
+    address: "11 rue Théodore de Banville, 75017 Paris",
+    photos: ["https://res.cloudinary.com/djwmjh3zt/image/upload/v1700665957/development/p4cb0iyag9tta783hs9gljgeg2r7.jpg", "https://res.cloudinary.com/djwmjh3zt/image/upload/v1700664632/development/xeqod0qjiiecq5ix03c7569yic6y.jpg", "https://res.cloudinary.com/djwmjh3zt/image/upload/v1700834999/development/28ritgj73xbe2v343ex0ir42871k.jpg"]
   },
   {
     model: "Citroen",
@@ -192,11 +169,20 @@ users = []
   users << user
 end
 
-car_models.each_with_index do |car, index|
-  user = users[index % 15] # Assign the car to a specific user from the users array
-  user.cars.create!(car)
+car_models.each_with_index do |car_data, index|
+  user = users[index % users.length] # Ensure users loop back if more cars than users
+  car = user.cars.create!(
+    model: car_data[:model],
+    year: car_data[:year],
+    color: car_data[:color],
+    fuel: car_data[:fuel],
+    price: car_data[:price],
+    description: car_data[:description],
+    address: car_data[:address]
+  )
+
+  # Check if photos exist and attach them to the car
+  
 end
-
-
 
 puts 'Seed creation is over!'

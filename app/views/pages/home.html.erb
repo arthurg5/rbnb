@@ -6,6 +6,7 @@
       <div class="row mt-5 cards-grid">
          <% @cars.each do |car| %>
           <div class= "col-3 mb-4">
+
             <div class="card h-100">
               <% if car.photos.present? %>
                 <% photo = car.photos.first %>
@@ -20,6 +21,7 @@
               </div>
             </div>
           </div>
+
         <% end %>
       </div>
     </div>
